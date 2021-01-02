@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/shop.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/banh-sua-dua.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/banh-trung-thu.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cake-pops.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/mousse.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/muffin.jpg")]
 
 
