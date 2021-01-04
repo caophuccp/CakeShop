@@ -3,10 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CakeShop.View"
+             xmlns:local="clr-namespace:CakeShop.View" xmlns:local1="clr-namespace:CakeShop.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <TextBlock FontSize="25">HomeScreen</TextBlock>
+    <UserControl.Resources>
+        <local1:AbsoluteConverter x:Key="AbsoluteConverter"></local1:AbsoluteConverter>
+        <local1:toVND x:Key="toVND"></local1:toVND>
+    </UserControl.Resources>
+    <Grid Background="#f2f2f2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <TextBlock Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" FontWeight="DemiBold" Margin="0 5 0 5" Foreground="#ff4dff" Text="Các loại bánh"></TextBlock>
+            <ListView x:Name="categoryList" SelectionChanged="categoryList_SelectionChanged">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Category}" FontSize="20" FontWeight="DemiBold" Margin="0 10 0 10" ></TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <Grid Grid.Column="1" Margin="20 0 0 0">
+            <ListView x:Name="cakeList">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Image,Converter={StaticResource AbsoluteConverter}}" Width="200" Height="200"></Image>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" FontSize="20" FontWeight="DemiBold"></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Price,Converter={StaticResource toVND}}" FontSize="17" Margin="0 0 0 20" ></TextBlock>
+                            <Button
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="100"
+                                Background="#df2056"
+                                ToolTip="Resource name: MaterialDesignRaisedButton">
+                                MUA
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </UserControl>

@@ -4,7 +4,7 @@
         "Name": "Bánh sữa dừa",
         "Price": 130000,
         "Description": "Bánh này mình học được trên mạng, nghe đồn bánh còn có tên rất mĩ miều là bánh bạch ngọc sương phương",
-        "Category": "Cake",
+        "Category": "Bánh dừa",
         "Image": "Images/banh-sua-dua.png"
     },
     {
@@ -12,7 +12,7 @@
         "Name": "Bánh trung thu",
         "Price": 154000,
         "Description": "Bánh trung thu chắc chắc là món ăn truyền thông của mỗi mùa trăng Rằm. Còn gì tuyệt vời hơn khi được ngồi quây quần bên gia đình và cùng nhau thưởng thức những miếng bánh thơm ngon.",
-        "Category": "Cake",
+        "Category": "Bánh nướng",
         "Image": "Images/banh-trung-thu.jpg"
     },
     {
@@ -20,7 +20,7 @@
         "Name": "MOUSSE",
         "Price": 245000,
         "Description": "Nhìn chung, theo “kinh nghiệm ăn uống” của mình, thì mousse thành công là mousse phải đóng được thành miếng (bánh), nhưng không cứng như thạch mà mềm, mịn, mượt và (hơi) xốp. Bỏ vào miệng là tan ra, béo ngậy vị kem tươi quyện với mùi vị đặc trưng của từng loại mousse riêng biệt (vd: mousse chanh leo, mousse xoài, mousse chocolate..)",
-        "Category": "Cake",
+        "Category": "Bread",
         "Image": "Images/mousse.jpg"
     },
     {
@@ -28,7 +28,7 @@
         "Name": "MUFFINS",
         "Price": 113000,
         "Description": "Thật ra mình nghĩ Muffin là loại bánh có rất nhiều ưu điểm. Chẳng hạn như là thành phần nguyên liệu để làm Muffin cực kì đa dạng, ngoài đường, bột, trứng ra thì chúng mình có thể tận dụng rất nhiều các loại nguyên liệu khác nhau để tạo ra nhiều loại Muffin theo sở thích, chẳng hạn như Muffin với hoa quả, với mứt, với các loại hạt khô hay kể cả Muffin nhân mặn (thịt hun khói, xúc xích, rau củ…).",
-        "Category": "Cake",
+        "Category": "Cream",
         "Image": "Images/muffin.jpg"
     },
     {
@@ -36,7 +36,7 @@
         "Name": "Cake Pops",
         "Price": 130000,
         "Description": "Cake pops – hay là những viên bánh nhỏ được cắm trên que, rất giống với kẹo mút – là một trong những thứ mà mình rất thích nghịch, không chỉ vì sự xinh & cute không đỡ nổi mà còn bởi vì sự đa dạng và khả năng sáng tạo không biên giới khi làm nó.",
-        "Category": "Cake",
+        "Category": "Glazed",
         "Image": "Images/cake-pops.jpg"
     }
 ]

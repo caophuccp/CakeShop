@@ -66,6 +66,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\AbsoluteConverter.cs" />
+    <Compile Include="Converter\toVND.cs" />
     <Compile Include="Models\Cake.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="View\AddScreen.xaml.cs">

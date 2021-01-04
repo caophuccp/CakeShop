@@ -28,3 +28,13 @@ C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen.baml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\Cart.baml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\HomeScreen.baml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\Statistic.baml
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\cake.json
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\order.json
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\banh-sua-dua.png
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\banh-trung-thu.jpg
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\cake-pops.jpg
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\mousse.jpg
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\muffin.jpg
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Newtonsoft.Json.dll
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Newtonsoft.Json.xml
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\GeneratedInternalTypeHelper.g.cs
