@@ -47,7 +47,8 @@
                                 Style="{StaticResource MaterialDesignRaisedButton}"
                                 Width="100"
                                 Background="#df2056"
-                                ToolTip="Resource name: MaterialDesignRaisedButton">
+                                Click="BuyButton_Click"
+                                >
                                 MUA
                             </Button>
                         </StackPanel>

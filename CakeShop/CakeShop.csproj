@@ -66,12 +66,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converter\OrderTotalConverter.cs" />
     <Compile Include="Converter\AbsoluteConverter.cs" />
     <Compile Include="Converter\CakeNameConverter.cs" />
     <Compile Include="Converter\toVND.cs" />
     <Compile Include="Models\Cake.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="View\AddScreen\AddCakeWindow.xaml.cs">
+      <DependentUpon>AddCakeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddScreen\AddScreen.xaml.cs">
       <DependentUpon>AddScreen.xaml</DependentUpon>
     </Compile>
@@ -100,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Style\IconButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddScreen\AddCakeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +182,9 @@
     <None Include="Images\muffin.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\overflow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

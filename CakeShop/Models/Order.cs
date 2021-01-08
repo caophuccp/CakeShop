@@ -37,7 +37,6 @@ namespace OrderShop.Models
         {
             string jsonString = ReadFile();
             var result = JsonConvert.DeserializeObject<List<Order>>(jsonString) ?? new List<Order>();
-            Debug.WriteLine(result[0].DateCreated);
             return result;
         }
 
@@ -47,8 +46,7 @@ namespace OrderShop.Models
             try
             {
                 string jsonString = JsonConvert.SerializeObject(all, Formatting.Indented);
-                Debug.WriteLine(jsonString);
-                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "data.json", jsonString);
+                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "order.json", jsonString);
                 result = true;
             }
             catch (Exception e)

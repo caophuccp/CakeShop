@@ -1,4 +1,5 @@
 ﻿using CakeShop.Models;
+using CakeShop.View.AddScreen;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,6 +23,10 @@ namespace CakeShop.View
     /// </summary>
     public partial class HomeScreen : UserControl
     {
+
+        public delegate void BuyCakeDelegate(Cake cake, int quantity);
+        public BuyCakeDelegate BuyCake;
+
         List<Cake> data = CakeDAO.GetAll();
         List<Cake> categoryListData = new List<Cake>();
         public HomeScreen()
@@ -65,6 +70,23 @@ namespace CakeShop.View
                 }
             }
             cakeList.ItemsSource = cakeCategory;
+        }
+
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Cake cake = button.DataContext as Cake;
+            if (BuyCake != null)
+            {
+                var window = new AddCakeWindow();
+                if (window.ShowDialog() == true) {
+                    BuyCake?.Invoke(cake, window.Answer);
+                    Window.GetWindow(this).Close();
+                }
+            } else
+            {
+
+            }
         }
     }
 }

@@ -37,10 +37,10 @@
                             <TextBlock Text="Home" FontSize="17" VerticalAlignment="Center" FontWeight="Bold" Margin="5 0"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="50" Width="150">
+                    <ListViewItem Height="50" Width="170">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Add" Width="30" Height="30" VerticalAlignment="Center" Margin="5" />
-                            <TextBlock Text="Add Cake" FontSize="17" VerticalAlignment="Center" FontWeight="Bold" Margin="5 0"></TextBlock>
+                            <TextBlock Text="Create Order" FontSize="17" VerticalAlignment="Center" FontWeight="Bold" Margin="5 0"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="50" Width="150">

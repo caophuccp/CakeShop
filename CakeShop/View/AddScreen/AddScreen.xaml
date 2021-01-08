@@ -10,23 +10,33 @@
              d:DesignHeight="550" d:DesignWidth="800">
     <UserControl.Resources>
         <cvt:CakeNameConverter x:Key="CakeNameConverter"></cvt:CakeNameConverter>
-        <cvt:OrderTotalConverter x:Key="OrderTotalConverter"></cvt:OrderTotalConverter>
     </UserControl.Resources>
     <Grid Background="#f2f2f2">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock
-            Grid.Row="0"
-            Text="Them hoa Don"
-            TextAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="45"
-            FontWeight="Medium"
+        <DockPanel Grid.Row="0">
+            <Button
+                DockPanel.Dock="Right"
+                Margin="10"
+                Style="{StaticResource MaterialDesignOutlinedButton}"
+                Content="THÊM"
+                Click="OrderAddButton_Click"
+                >
+            </Button>
+
+            <TextBlock
+                Text="Thêm hoá đơn"
+                TextAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="#61a7f2"
+                FontSize="35"
+                FontWeight="Medium"
             >
 
-        </TextBlock>
+            </TextBlock>
+        </DockPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MaxWidth="400"/>
@@ -34,6 +44,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Margin="30, 0">
                 <local:HLTextBox
+                    x:Name="NameTextBox"
                     Height="80"
                     Title="Tên khách hàng"
                     Placeholder="Nguyen Van A"
@@ -43,6 +54,7 @@
                 </local:HLTextBox>
 
                 <local:HLTextBox
+                    x:Name="EmailTextBox"
                     Height="80"
                     Title="Email khách hàng"
                     Placeholder="example@email.com"
@@ -52,6 +64,7 @@
                 </local:HLTextBox>
 
                 <local:HLTextBox
+                    x:Name="PhoneTextBox"
                     Height="80"
                     Title="Số điện thoại"
                     Placeholder="0123456789"
@@ -60,6 +73,7 @@
 
                 </local:HLTextBox>
                 <local:HLTextBox
+                    x:Name="AddressTextBox"
                     Height="80"
                     Title="Địa chỉ"
                     Placeholder="227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh"
@@ -70,7 +84,7 @@
                 
             </StackPanel>
 
-            <Border  Grid.Column="1" BorderBrush="#61a7f2" BorderThickness="1" CornerRadius="10">
+            <Border Grid.Column="1" Margin="0,0,0,30" BorderBrush="#61a7f2" BorderThickness="1" CornerRadius="10">
                 <DockPanel Margin="30, 0">
                     <TextBlock
                         DockPanel.Dock="Top"
@@ -108,7 +122,30 @@
                             FontWeight="Medium"
                             >
                         </TextBlock>
+
+                        <Button Grid.Column="2" Style="{StaticResource IconButtonStyle}" Click="AddCake_Click" Margin="10, 0, 0, 0" Width="30" Height="30">
+                            <materialDesign:PackIcon Kind="Plus" Foreground="Green" Width="30" Height="30"/>
+
+                        </Button>
                     </Grid>
+                    <TextBlock 
+                        DockPanel.Dock="Top"
+                        Text="Đơn hàng không được trống"
+                        TextAlignment="Center"
+                        Foreground="Red"
+                        FontWeight="Medium"
+                        >
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Items.Count, ElementName=OCListView}" Value="0">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
                     <Grid DockPanel.Dock="Bottom" Margin="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -125,17 +162,19 @@
                             >
                         </TextBlock>
                         <TextBlock 
+                            x:Name="TotalTextBox"
                             Grid.Column="1"
                             Foreground="#0077be"
+                            TextAlignment="Center"
                             VerticalAlignment="Center"
-                            Text="{Binding OrderCakeList, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource OrderTotalConverter}}"
                             FontSize="18"
                             FontWeight="Medium"
+                            Text="0"
                             >
                         </TextBlock>
                     </Grid>
 
-                    <ListView Margin="10" ItemsSource="{Binding OrderCakeList, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                    <ListView x:Name="OCListView" Margin="10" ItemsSource="{Binding Products, RelativeSource={RelativeSource AncestorType=UserControl}}">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Setter Property="Background" Value="Transparent" />

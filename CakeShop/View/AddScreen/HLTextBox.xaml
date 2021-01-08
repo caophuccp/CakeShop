@@ -29,7 +29,7 @@
                     </Style.Triggers>
                 </Style>
             </TextBlock.Style>
-                
+
         </TextBlock>
         <Border
             Grid.Row="1"
@@ -103,7 +103,6 @@
                 </TextBox>
             </Grid>
         </Border>
-
         <TextBlock 
             Grid.Row="2" 
             Text="{Binding ErrorMessage, RelativeSource={RelativeSource AncestorType=UserControl}}"
