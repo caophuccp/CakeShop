@@ -9,7 +9,7 @@ namespace OrderShop.Models
 
     public class OrderCake
     {
-        public int OrderID { get; set; }
+        public int CakeID { get; set; }
         public int Quantity { get; set; }
     }
 
@@ -19,6 +19,7 @@ namespace OrderShop.Models
         public string CustomerName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public string Address { get; set; }
         public List<OrderCake> Products { get; set; }
         public double Total { get; set; }
     }

@@ -66,12 +66,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\OrderTotalConverter.cs" />
     <Compile Include="Converter\AbsoluteConverter.cs" />
+    <Compile Include="Converter\CakeNameConverter.cs" />
     <Compile Include="Converter\toVND.cs" />
     <Compile Include="Models\Cake.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="View\AddScreen.xaml.cs">
+    <Compile Include="View\AddScreen\AddScreen.xaml.cs">
       <DependentUpon>AddScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddScreen\HLTextBox.xaml.cs">
+      <DependentUpon>HLTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Cart.xaml.cs">
       <DependentUpon>Cart.xaml</DependentUpon>
@@ -94,7 +99,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\AddScreen.xaml">
+    <Page Include="Style\IconButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddScreen\AddScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddScreen\HLTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

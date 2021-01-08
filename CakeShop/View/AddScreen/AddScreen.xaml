@@ -1,0 +1,210 @@
+﻿<UserControl x:Class="CakeShop.View.AddScreen.AddScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CakeShop.View.AddScreen"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:cvt="clr-namespace:CakeShop.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <UserControl.Resources>
+        <cvt:CakeNameConverter x:Key="CakeNameConverter"></cvt:CakeNameConverter>
+        <cvt:OrderTotalConverter x:Key="OrderTotalConverter"></cvt:OrderTotalConverter>
+    </UserControl.Resources>
+    <Grid Background="#f2f2f2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Text="Them hoa Don"
+            TextAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="45"
+            FontWeight="Medium"
+            >
+
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="400"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="30, 0">
+                <local:HLTextBox
+                    Height="80"
+                    Title="Tên khách hàng"
+                    Placeholder="Nguyen Van A"
+                    ErrorMessage="Hãy cung cấp tên khách hàng"
+                    >
+
+                </local:HLTextBox>
+
+                <local:HLTextBox
+                    Height="80"
+                    Title="Email khách hàng"
+                    Placeholder="example@email.com"
+                    ErrorMessage="Hãy cung cấp email hợp lệ"
+                    >
+
+                </local:HLTextBox>
+
+                <local:HLTextBox
+                    Height="80"
+                    Title="Số điện thoại"
+                    Placeholder="0123456789"
+                    ErrorMessage="Hãy cung cấp số điện thoại hợp lệ"
+                    >
+
+                </local:HLTextBox>
+                <local:HLTextBox
+                    Height="80"
+                    Title="Địa chỉ"
+                    Placeholder="227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh"
+                    ErrorMessage="Hãy cung cấp địa chỉ hợp lệ"
+                    >
+
+                </local:HLTextBox>
+                
+            </StackPanel>
+
+            <Border  Grid.Column="1" BorderBrush="#61a7f2" BorderThickness="1" CornerRadius="10">
+                <DockPanel Margin="30, 0">
+                    <TextBlock
+                        DockPanel.Dock="Top"
+                        Text="Chi tiết đơn hàng"
+                        Height="40"
+                        Margin="10"
+                        TextAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Medium"
+                        Foreground="#61a7f2"
+                        >
+
+                    </TextBlock>
+                    <Grid DockPanel.Dock="Top" Height="40" Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock 
+                            Grid.Column="0"
+                            Foreground="#220cb0"
+                            VerticalAlignment="Center"
+                            Text="Loại bánh"
+                            FontSize="18"
+                            FontWeight="Medium"
+                            >
+                        </TextBlock>
+                        <TextBlock 
+                            Grid.Column="1"
+                            Foreground="#0077be"
+                            VerticalAlignment="Center"
+                            Text="Số lượng"
+                            FontSize="18"
+                            FontWeight="Medium"
+                            >
+                        </TextBlock>
+                    </Grid>
+                    <Grid DockPanel.Dock="Bottom" Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock 
+                            Grid.Column="0"
+                            Foreground="#220cb0"
+                            VerticalAlignment="Center"
+                            Text="Tổng"
+                            FontSize="18"
+                            FontWeight="Medium"
+                            >
+                        </TextBlock>
+                        <TextBlock 
+                            Grid.Column="1"
+                            Foreground="#0077be"
+                            VerticalAlignment="Center"
+                            Text="{Binding OrderCakeList, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource OrderTotalConverter}}"
+                            FontSize="18"
+                            FontWeight="Medium"
+                            >
+                        </TextBlock>
+                    </Grid>
+
+                    <ListView Margin="10" ItemsSource="{Binding OrderCakeList, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Height" Value="40"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                            <ContentPresenter />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="OrderCakeListViewItem">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock 
+                                        Grid.Column="0"
+                                        Foreground="#0077be"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding CakeID, Converter={StaticResource CakeNameConverter}}"
+                                        FontSize="16"
+                                        >
+                                    </TextBlock>
+                                    <TextBlock 
+                                        Grid.Column="1"
+                                        Foreground="#0077be"
+                                        VerticalAlignment="Center"
+                                        TextAlignment="Center"
+                                        Text="{Binding Quantity}"
+                                        FontSize="16"
+                                        >
+                                    </TextBlock>
+                                    <Button Grid.Column="2" Click="RemoveButton_Click" Margin="10, 0, 0, 0" Width="30" Height="30">
+                                        <materialDesign:PackIcon Kind="MinusCircleOutline" Foreground="red" Width="30" Height="30"/>
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonStyle}">
+                                                <Setter Property="Opacity" Value="0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=OrderCakeListViewItem}" Value="True">
+                                                       
+                                                        <Setter Property="Opacity" Value="1"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <!--<Setter Property="Background" Value="#84949c"/>-->
+                                                    <Setter Property="Opacity" Value="0.6"></Setter>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

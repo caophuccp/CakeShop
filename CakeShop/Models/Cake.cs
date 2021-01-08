@@ -31,6 +31,7 @@ namespace CakeShop.Models
         {
             string jsonString = ReadFile();
             var result = JsonConvert.DeserializeObject<List<Cake>>(jsonString) ?? new List<Cake>();
+            Cache = result;
             return result;
         }
 
@@ -42,6 +43,7 @@ namespace CakeShop.Models
                 string jsonString = JsonConvert.SerializeObject(all, Formatting.Indented);
                 File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "data.json", jsonString);
                 result = true;
+                Cache = all;
             }
             catch (Exception e)
             {
@@ -59,6 +61,9 @@ namespace CakeShop.Models
             if (!result)
             {
                 cake.ID = oldID;
+            } else
+            {
+                Cache = list;
             }
             return result;
         }
@@ -86,5 +91,7 @@ namespace CakeShop.Models
 
             return result;
         }
+
+        public static List<Cake> Cache = GetAll();
     }
 }
