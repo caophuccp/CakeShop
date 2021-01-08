@@ -37,7 +37,7 @@ namespace CakeShop.View.AddScreen
         public AddScreen()
         {
             InitializeComponent();
-            //OrderCakeListView.ItemsSource = OrderCakeList;
+            OrderDAO.GetAll();
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)

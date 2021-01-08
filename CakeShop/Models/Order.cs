@@ -22,6 +22,7 @@ namespace OrderShop.Models
         public string Address { get; set; }
         public List<OrderCake> Products { get; set; }
         public double Total { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 
     public class OrderDAO
@@ -36,6 +37,7 @@ namespace OrderShop.Models
         {
             string jsonString = ReadFile();
             var result = JsonConvert.DeserializeObject<List<Order>>(jsonString) ?? new List<Order>();
+            Debug.WriteLine(result[0].DateCreated);
             return result;
         }
 
@@ -45,6 +47,7 @@ namespace OrderShop.Models
             try
             {
                 string jsonString = JsonConvert.SerializeObject(all, Formatting.Indented);
+                Debug.WriteLine(jsonString);
                 File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "data.json", jsonString);
                 result = true;
             }
