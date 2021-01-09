@@ -1,22 +1,12 @@
 ﻿using CakeShop.Models;
 using OrderShop.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CakeShop.View.AddScreen
 {
@@ -30,6 +20,12 @@ namespace CakeShop.View.AddScreen
         public AddScreen()
         {
             InitializeComponent();
+        }
+
+        public AddScreen(Cake cake, int quantity)
+        {
+            InitializeComponent();
+            Products.Add(new OrderCake() { CakeID = cake.ID, Quantity = quantity });
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
@@ -52,14 +48,18 @@ namespace CakeShop.View.AddScreen
             {
                 Title = "Choose",
                 Content = home,
-                Icon = BitmapFrame.Create(iconUri),
-
+                Icon = BitmapFrame.Create(iconUri)
             };
             window.ShowDialog();
         }
 
-        private void BuyCake(Cake cake, int quantity)
+        public void BuyCake(DependencyObject sender, Cake cake, int quantity)
         {
+            if (sender != null)
+            {
+                Window.GetWindow(sender).Close();
+            }
+
             if (cake != null)
             {
                 var orderCake = Products.FirstOrDefault(e => e.CakeID == cake.ID);
@@ -116,7 +116,7 @@ namespace CakeShop.View.AddScreen
             PhoneTextBox.HasError = string.IsNullOrEmpty(PhoneTextBox.Text) ? true : !phoneRegex.IsMatch(PhoneTextBox.Text);
             AddressTextBox.HasError = string.IsNullOrEmpty(AddressTextBox.Text);
             bool cakeError = Products.Count == 0;
-            bool error = NameTextBox.HasError | EmailTextBox.HasError | PhoneTextBox.HasError | AddressTextBox.HasError | cakeError;
+            bool error = NameTextBox.HasError || EmailTextBox.HasError || PhoneTextBox.HasError || AddressTextBox.HasError || cakeError;
             return !error;
         }
 
