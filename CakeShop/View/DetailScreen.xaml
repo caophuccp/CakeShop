@@ -25,10 +25,10 @@
             </Border>
             <DockPanel LastChildFill="False">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
-                    <Button Style="{StaticResource MaterialDesignIconButton}" ToolTip="Chỉnh sửa" Width="40" Height="40" Margin="10,0,0,0" >
-                        <materialDesign:PackIcon Kind="Update" Width="30" Height="30"/>
+                    <Button Click="EditButton_Click" Style="{StaticResource MaterialDesignIconButton}" ToolTip="Chỉnh sửa" Width="40" Height="40" Margin="10,0,0,0" >
+                        <materialDesign:PackIcon Kind="SquareEditOutline" Width="30" Height="30"/>
                     </Button>
-                    <Button Style="{StaticResource MaterialDesignIconButton}" ToolTip="Xóa" Width="40" Height="40" Margin="10,0,0,0">
+                    <Button Click="RemoveButton_Click"  Style="{StaticResource MaterialDesignIconButton}" ToolTip="Xóa" Width="40" Height="40" Margin="10,0,0,0">
                         <materialDesign:PackIcon Kind="DeleteOutline" Width="30" Height="30" />
                     </Button>
                 </StackPanel>

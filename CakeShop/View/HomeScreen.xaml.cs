@@ -88,7 +88,8 @@ namespace CakeShop.View
                 string category = categoryListData[index];
                 cakeCategory = data.Where(c => c.Category == category).ToList();
             }
-            cakeList.ItemsSource = cakeCategory;
+            //cakeList.ItemsSource = cakeCategory; 
+            cakeList.ItemsSource = cakeCategory.ToList();
         }
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
@@ -130,16 +131,19 @@ namespace CakeShop.View
         private void AddCake(DependencyObject sender, Cake cake)
         {
             Window.GetWindow(sender).Close();
-            CakeDAO.Insert(cake);
-            Debug.WriteLine(cake.ID);
-            data.Add(cake);
-            int index = categoryListData.IndexOf(cake.Category);
-            if (index >= 0 && index != categoryList.SelectedIndex)
+            var insert = CakeDAO.Insert(cake);
+            if (insert == true)
             {
-                categoryList.SelectedIndex = index;
-            } else
-            {
-                ReloadData();
+                data.Add(cake);
+                int index = categoryListData.IndexOf(cake.Category);
+                if (index >= 0 && index != categoryList.SelectedIndex)
+                {
+                    categoryList.SelectedIndex = index;
+                }
+                else
+                {
+                    ReloadData();
+                }
             }
         }
 
@@ -150,9 +154,32 @@ namespace CakeShop.View
             {
                 Cake c = data[index];
                 DetailScreen detail = new DetailScreen(c);
+                detail.EndEditing = EndEditing;
                 detail.Show();
-                detail.Topmost = true;
+                //detail.Topmost = true;
                 cakeList.UnselectAll();
+            }
+        }
+
+        private void EndEditing(Cake cake, DetailScreen.EditingStyle style)
+        {
+            if (style == DetailScreen.EditingStyle.Update)
+            {
+                var selectedCake = data.FirstOrDefault(e => e.ID == cake.ID);
+                if (selectedCake != null)
+                {
+
+                    selectedCake.Name = cake.Name;
+                    selectedCake.Image = cake.Image;
+                    selectedCake.Price = cake.Price;
+                    selectedCake.Category = cake.Category;
+                    selectedCake.Description = cake.Description;
+                }
+                ReloadData();
+            } else if (style == DetailScreen.EditingStyle.Delete)
+            {
+                data.Remove(cake);
+                ReloadData();
             }
         }
     }

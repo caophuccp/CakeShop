@@ -50,10 +50,12 @@ namespace CakeShop.View.AddScreen
             var path = AppDomain.CurrentDomain.BaseDirectory + cake.Image;
             LoadImage(path);
 
+            ImageString = cake.Image;
             NameTextBox.Text = cake.Name;
             PriceTextBox.Text = cake.Price.ToString();
             DescriptionTextBox.Text = cake.Description;
-
+            SubmitButton.Content = "Lưu";
+            TitleTextBlock.Text = "Thay đổi thông tin";
         }
 
         private void Setup()
