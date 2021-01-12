@@ -20,11 +20,9 @@ C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\CakeShop.csproj.CoreCompileI
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\CakeShop.csproj.CopyComplete
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\CakeShop.exe
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\CakeShop.pdb
-C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen.g.cs
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\Cart.g.cs
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\HomeScreen.g.cs
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\Statistic.g.cs
-C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen.baml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\Cart.baml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\HomeScreen.baml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\Statistic.baml
@@ -38,3 +36,13 @@ C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\muffin.jpg
 C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Newtonsoft.Json.dll
 C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Newtonsoft.Json.xml
 C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\v\source\repos\CakeShop\CakeShop\bin\Debug\Images\dessert.png
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\CakeForm.g.cs
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\AddCakeWindow.g.cs
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\AddScreen.g.cs
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\HLTextBox.g.cs
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\Style\IconButtonStyle.baml
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\CakeForm.baml
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\AddCakeWindow.baml
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\AddScreen.baml
+C:\Users\v\source\repos\CakeShop\CakeShop\obj\Debug\View\AddScreen\HLTextBox.baml

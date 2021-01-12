@@ -1,0 +1,90 @@
+[
+  {
+    "ID": 0,
+    "CustomerName": "Trương Thiếu Anh",
+    "Phone": "0123456129",
+    "Email": "tta@email.em",
+    "Address": "227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh",
+    "Products": [
+      {
+        "CakeID": 0,
+        "Quantity": 1
+      },
+      {
+        "CakeID": 1,
+        "Quantity": 1
+      },
+      {
+        "CakeID": 3,
+        "Quantity": 1
+      }
+    ],
+    "Total": 523000.0,
+    "DateCreated": "2021-01-08T19:22:01.7401895+07:00"
+  },
+  {
+    "ID": 1,
+    "CustomerName": "JSON",
+    "Phone": "01239841",
+    "Email": "mvmv@email.em",
+    "Address": "227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh",
+    "Products": [
+      {
+        "CakeID": 3,
+        "Quantity": 2
+      },
+      {
+        "CakeID": 4,
+        "Quantity": 4
+      }
+    ],
+    "Total": 133000.0,
+    "DateCreated": "2021-01-08T19:22:01.743171+07:00"
+  },
+  {
+    "ID": 2,
+    "CustomerName": "YY",
+    "Phone": "0123456789",
+    "Email": "yy@email.em",
+    "Address": "227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh",
+    "Products": [
+      {
+        "CakeID": 0,
+        "Quantity": 1
+      },
+      {
+        "CakeID": 1,
+        "Quantity": 1
+      },
+      {
+        "CakeID": 2,
+        "Quantity": 2
+      },
+      {
+        "CakeID": 3,
+        "Quantity": 1
+      },
+      {
+        "CakeID": 4,
+        "Quantity": 1
+      }
+    ],
+    "Total": 233000.0,
+    "DateCreated": "2021-01-08T19:22:01.743171+07:00"
+  },
+  {
+    "ID": 3,
+    "CustomerName": "HoH",
+    "Phone": "012341123",
+    "Email": "hoh@email.em",
+    "Address": "227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh",
+    "Products": [
+      {
+        "CakeID": 0,
+        "Quantity": 3
+      }
+    ],
+    "Total": 339000.0,
+    "DateCreated": "2021-01-08T19:22:01.743171+07:00"
+  }
+]
