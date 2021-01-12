@@ -50,6 +50,8 @@ namespace CakeShop
                     break;
                 case 2:
                     //Statistic 
+                    mainGrid.Children.Clear();
+                    mainGrid.Children.Add(new Statistic());
                     break;
                 case 3:
                     //Order

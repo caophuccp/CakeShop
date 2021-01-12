@@ -150,9 +150,24 @@ namespace CakeShop.View
         private void cake_SelectionChanged(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var index = cakeList.SelectedIndex;
-            if (index >= 0 && index < data.Count)
+
+
+            int index1 = categoryList.SelectedIndex;
+            List<Cake> cakeCategory = null;
+            if (index1 == 0)
             {
-                Cake c = data[index];
+                cakeCategory = data;
+            }
+            else if (index1 > 0 && index1 < categoryListData.Count)
+            {
+                string category = categoryListData[index1];
+                cakeCategory = data.Where(c => c.Category == category).ToList();
+            }
+
+
+            if (index >= 0 && index < cakeCategory.Count)
+            {
+                Cake c = cakeCategory[index];
                 DetailScreen detail = new DetailScreen(c);
                 detail.EndEditing = EndEditing;
                 detail.Show();

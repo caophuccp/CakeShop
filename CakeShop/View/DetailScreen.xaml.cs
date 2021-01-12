@@ -73,6 +73,8 @@ namespace CakeShop.View
                 Content = form,
                 Icon = BitmapFrame.Create(iconUri),
                 SizeToContent = SizeToContent.Height,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                Width = 600,
             };
             window.ShowDialog();
         }
