@@ -142,5 +142,18 @@ namespace CakeShop.View
                 ReloadData();
             }
         }
+
+        private void cake_SelectionChanged(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var index = cakeList.SelectedIndex;
+            if (index >= 0 && index < data.Count)
+            {
+                Cake c = data[index];
+                DetailScreen detail = new DetailScreen(c);
+                detail.Show();
+                detail.Topmost = true;
+                cakeList.UnselectAll();
+            }
+        }
     }
 }
